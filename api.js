@@ -34,10 +34,10 @@ app.post('/api/rotateImage', function(req, res) {
 var imageName = req.body.imageUrl; 
   var shouldConcertToGrayScale = req.body.shouldConcertToGrayScale; 
   var body = req.body; 
-  console.log('imageUrl = '+imageName);
+  // console.log('imageUrl = '+imageName);
 
 download(''+imageName, 'downloaded-img.jpg', function(){
-  console.log('done. file name is downloaded-img.png');
+  // console.log('done. file name is downloaded-img.png');
   Jimp.read('downloaded-img.jpg').then(function (img2) {
 
     img2
@@ -50,11 +50,8 @@ download(''+imageName, 'downloaded-img.jpg', function(){
     console.error(err);
 });
 
-//TODO : Remove Nested function 
-//TODO : Replace physical path with logical path
 fs.readFile('img1-Rotated.jpg', function(err, data1) {
     res.writeHead(200, {'Content-Type': 'image/jpeg'});
-    // res.end('<html> <body> <img src="img1-Rotated.jpg" alt="image" height="256" width="256"> </body> </html>');  
     res.end(data1);  
    }); //fs read file output image
    

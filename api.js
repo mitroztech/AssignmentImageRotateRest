@@ -52,7 +52,7 @@ download(''+imageName, 'downloaded-img.jpg', function(){
 
 //TODO : Remove Nested function 
 //TODO : Replace physical path with logical path
-fs.readFile('/seema_projects/assignment_rest_rotate_image/AssignmentImageRotateRest/img1-Rotated.jpg', function(err, data1) {
+fs.readFile('img1-Rotated.jpg', function(err, data1) {
     res.writeHead(200, {'Content-Type': 'image/jpeg'});
     // res.end('<html> <body> <img src="img1-Rotated.jpg" alt="image" height="256" width="256"> </body> </html>');  
     res.end(data1);  

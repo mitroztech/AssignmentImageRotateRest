@@ -14,13 +14,15 @@ var port = 8080;
 
 app.use(function (req, res, next) {
   console.log("body : "+req.body); // populated!
+  console.log("imageUrl : "+req.body.imageUrl); // populated!
+
   next();
 })
 
 var download = function(uri, filename, callback){
   request.head(uri, function(err, res, body){
-    console.log('content-type:', res.headers['content-type']);
-    console.log('content-length:', res.headers['content-length']);
+    // console.log('content-type:', res.headers['content-type']);
+    // console.log('content-length:', res.headers['content-length']);
 
     request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
   });
@@ -50,7 +52,7 @@ download(''+imageName, 'downloaded-img.jpg', function(){
 
 //TODO : Remove Nested function 
 //TODO : Replace physical path with logical path
-fs.readFile('/Users/Tiger/Desktop/Assignment/img1-Rotated.jpg', function(err, data1) {
+fs.readFile('/seema_projects/assignment_rest_rotate_image/AssignmentImageRotateRest/img1-Rotated.jpg', function(err, data1) {
     res.writeHead(200, {'Content-Type': 'image/jpeg'});
     // res.end('<html> <body> <img src="img1-Rotated.jpg" alt="image" height="256" width="256"> </body> </html>');  
     res.end(data1);  

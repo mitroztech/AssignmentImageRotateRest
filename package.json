@@ -1,0 +1,25 @@
+{
+  "name": "Assignment Image Rotate REST API",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "baboon-image": "^2.1.0",
+    "body-parser": "^1.18.2",
+    "express": "^3.4.8",
+    "jade": "*",
+    "jimp": "^0.2.28",
+    "multipart": "^0.1.5",
+    "path": "^0.12.7",
+    "request": "^2.85.0",
+    "zeros": "^1.0.0"
+  },
+  "main": "GetImageandrotate.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "Seema S",
+  "license": "ISC",
+  "description": "This API is desgined for accepting image URL and return rotated image."
+}
